@@ -1,9 +1,13 @@
 import fitnessWear from "@/assets/fitness-wear.jpg";
 import beachwear from "@/assets/beachwear.jpg";
 import intimateWear from "@/assets/intimate-wear.jpg";
-import { Dumbbell, Waves, Heart } from "lucide-react";
+import { Dumbbell, Waves, Heart, Store } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       title: "Moda fitness",
@@ -46,9 +50,10 @@ const Products = () => {
             {products.map((product, index) => {
               const Icon = product.icon;
               return (
-                <div
+                <button
                   key={index}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in"
+                  onClick={() => navigate("/vitrine")}
+                  className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in text-left cursor-pointer"
                   style={{ animationDelay: product.delay }}
                 >
                   <div className="relative h-64 overflow-hidden">
@@ -66,9 +71,20 @@ const Products = () => {
                     <h3 className="text-2xl font-bold text-primary mb-3">{product.title}</h3>
                     <p className="text-foreground leading-relaxed">{product.description}</p>
                   </div>
-                </div>
+                </button>
               );
             })}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button
+              size="lg"
+              onClick={() => navigate("/vitrine")}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6"
+            >
+              <Store className="mr-2 h-5 w-5" />
+              Veja nossa vitrine
+            </Button>
           </div>
 
           <div className="mt-16 bg-muted/30 rounded-2xl p-8 md:p-12 text-center">

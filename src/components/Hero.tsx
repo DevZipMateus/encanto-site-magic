@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Store } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToProducts = () => {
     const element = document.getElementById("produtos");
     if (element) {
@@ -49,6 +52,14 @@ const Hero = () => {
             >
               Conheça nossos produtos
               <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button
+              size="lg"
+              onClick={() => navigate("/vitrine")}
+              className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6"
+            >
+              <Store className="mr-2 h-5 w-5" />
+              Veja nossa vitrine
             </Button>
             <Button
               size="lg"
