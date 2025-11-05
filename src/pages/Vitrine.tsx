@@ -1,5 +1,21 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
+
 const Vitrine = () => {
+  useEffect(() => {
+    // Carrega o script do badge MonteSite
+    const script = document.createElement('script');
+    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
   return <div className="h-screen w-full overflow-hidden flex flex-col">
       {/* Header fixo - 80px */}
       <div className="h-20">
@@ -16,7 +32,7 @@ const Vitrine = () => {
       </div>
 
       {/* Badge inferior - 63px */}
-      
+      <div id="montesite-footer-badge" className="h-[63px]" />
     </div>;
 };
 export default Vitrine;
