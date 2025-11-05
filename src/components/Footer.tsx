@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Logo Encanto store" className="h-48 w-48" />
+              <img src={logo} alt="Logo Encanto store" className="h-48 w-48 bg-white p-2 rounded" />
               <span className="text-xl font-bold">Encanto store</span>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
