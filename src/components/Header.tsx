@@ -49,9 +49,8 @@ const Header = () => {
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-background"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <button onClick={() => scrollToSection("hero")} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Voltar ao início">
+          <button onClick={() => scrollToSection("hero")} className="flex items-center hover:opacity-80 transition-opacity" aria-label="Voltar ao início">
             <img src={logo} alt="Logo Encanto store" className="h-36 w-36" />
-            <span className="text-xl font-bold text-primary">Encanto store</span>
           </button>
 
           {/* Desktop Navigation */}
