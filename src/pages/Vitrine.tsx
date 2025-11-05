@@ -26,9 +26,12 @@ const Vitrine = () => {
 
   return <div className="h-screen w-full overflow-hidden flex flex-col">
       {/* Header fixo - 80px */}
-      <div className="h-20">
+      <div className="fixed top-0 left-0 right-0 z-50 h-20 bg-background">
         <Header />
       </div>
+      
+      {/* Espaçamento para o header fixo */}
+      <div className="h-20" />
       
       {/* Iframe - altura dinâmica: 100vh - 80px - 63px */}
       <div className="w-full flex-1" style={{
